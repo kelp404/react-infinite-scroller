@@ -209,6 +209,7 @@ export default class InfiniteScroll extends Component {
 
     // Here we make sure the element is visible as well as checking the offset
     if (
+      !this.isLoadMoreProcessing &&
       offset < Number(this.props.threshold) &&
       (el && el.offsetParent !== null)
     ) {
@@ -217,7 +218,10 @@ export default class InfiniteScroll extends Component {
       this.beforeScrollTop = parentNode.scrollTop;
       // Call loadMore after detachScrollListener to allow for non-async loadMore functions
       if (typeof this.props.loadMore === 'function') {
-        this.props.loadMore((this.pageLoaded += 1));
+        this.isLoadMoreProcessing = true;
+        this.props.loadMore((this.pageLoaded += 1)).finally(() => {
+          this.isLoadMoreProcessing = false;
+        });
         this.loadMore = true;
       }
     }
