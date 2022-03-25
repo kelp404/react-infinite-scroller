@@ -1,6 +1,5 @@
-src
 coverage
 test
 .nyc_output
 docs
-
+.eslintrc.js

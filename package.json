@@ -1,12 +1,12 @@
 {
   "name": "react-infinite-scroller",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Infinite scroll component for React in ES6",
   "main": "index.js",
   "jsnext:main": "src/InfiniteScroll.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/CassetteRocks/react-infinite-scroller.git"
+    "url": "git://github.com/danbovey/react-infinite-scroller.git"
   },
   "scripts": {
     "build": "mkdirp dist && babel src/InfiniteScroll.js --out-file dist/InfiniteScroll.js",
@@ -27,16 +27,16 @@
     "scroll",
     "react"
   ],
-  "author": "CassetteRocks",
+  "author": "Dan Bovey <dan@danbovey.uk>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CassetteRocks/react-infinite-scroller/issues"
+    "url": "https://github.com/danbovey/react-infinite-scroller/issues"
   },
   "dependencies": {
     "prop-types": "^15.5.8"
   },
   "peerDependencies": {
-    "react": "^0.14.9 || ^15.3.0 || ^16.0.0"
+    "react": "^0.14.9 || ^15.3.0 || ^16.0.0 || ^17.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
@@ -65,7 +65,7 @@
     "lint-staged": "^4.3.0",
     "mkdirp": "^0.5.1",
     "mocha": "^3.3.0",
-    "nyc": "^10.2.0",
+    "nyc": "^15.1.0",
     "prettier": "^1.7.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

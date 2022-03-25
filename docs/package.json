@@ -25,12 +25,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CassetteRocks/react-infinite-scroller.git"
+    "url": "git+https://github.com/danbovey/react-infinite-scroller.git"
   },
   "author": "Dan Bovey <dan@danbovey.uk>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CassetteRocks/react-infinite-scroller/issues"
+    "url": "https://github.com/danbovey/react-infinite-scroller/issues"
   },
-  "homepage": "https://github.com/CassetteRocks/react-infinite-scroller#readme"
+  "homepage": "https://github.com/danbovey/react-infinite-scroller#readme"
 }
