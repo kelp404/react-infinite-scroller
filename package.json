@@ -1,7 +1,10 @@
 {
-  "name": "react-infinite-scroller",
+  "name": "@kelp404/react-infinite-scroller",
   "version": "1.2.5",
   "description": "Infinite scroll component for React in ES6",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
   "jsnext:main": "src/InfiniteScroll.js",
   "repository": {
