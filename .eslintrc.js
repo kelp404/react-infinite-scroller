@@ -5,9 +5,10 @@ const prettierOptions = JSON.parse(fs.readFileSync('./.prettierrc', 'utf8'));
 module.exports = {
   extends: ['last', 'prettier', 'prettier/react', 'plugin:react/recommended'],
   plugins: ['react', 'prettier'],
+  env: {
+    browser: true,
+  },
   globals: {
-    document: true,
-    window: true,
     describe: true,
     it: true,
     module: true,

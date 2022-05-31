@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, act } from '@testing-library/react';
 import { expect } from 'chai';
 import { stub, spy } from 'sinon';
 import InfiniteScroll from '../src/InfiniteScroll';
@@ -15,14 +15,14 @@ describe('InfiniteScroll component', () => {
       </div>
     );
 
-    const wrapper = mount(
+    const { container } = render(
       <div>
         <InfiniteScroll pageStart={0} loadMore={loadMore} hasMore={false}>
           <div className="om-product__list">{children}</div>
         </InfiniteScroll>
       </div>
     );
-    expect(wrapper.find('.child-class').length).to.equal(3);
+    expect(container.querySelectorAll('.child-class').length).to.equal(3);
   });
 
   it('should render componentDidMount', () => {
@@ -35,7 +35,7 @@ describe('InfiniteScroll component', () => {
         <div className="child-class">3</div>
       </div>
     );
-    mount(
+    render(
       <div>
         <InfiniteScroll pageStart={0} loadMore={loadMore} hasMore={false}>
           <div className="om-product__list">{children}</div>
@@ -57,7 +57,7 @@ describe('InfiniteScroll component', () => {
         <div className="child-class">3</div>
       </div>
     );
-    mount(
+    render(
       <div>
         <InfiniteScroll
           pageStart={0}
@@ -77,26 +77,31 @@ describe('InfiniteScroll component', () => {
   });
 
   it('should handle when the scrollElement is removed from the DOM', () => {
+    const componentRef = React.createRef();
+
     const loadMore = stub();
 
-    const wrapper = mount(
+    const { container } = render(
       <div>
-        <InfiniteScroll pageStart={0} loadMore={loadMore} hasMore={false}>
+        <InfiniteScroll
+          ref={componentRef}
+          pageStart={0}
+          loadMore={loadMore}
+          hasMore={false}
+        >
           <div className="child-component">Child Text</div>
         </InfiniteScroll>
       </div>
     );
 
-    const component = wrapper.find(InfiniteScroll);
-
     // The component has now mounted, but the scrollComponent is null
-    component.instance().scrollComponent = null;
+    componentRef.current.scrollComponent = null;
 
     // Invoke the scroll listener which depends on the scrollComponent to
     // verify it executes properly, and safely navigates when the
     // scrollComponent is null.
-    component.instance().scrollListener();
+    componentRef.current.scrollListener();
 
-    expect(wrapper.text()).to.contain('Child Text');
+    expect(container.textContent).to.equal('Child Text');
   });
 });

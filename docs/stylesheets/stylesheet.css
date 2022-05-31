@@ -244,50 +244,6 @@ a {
   .site-footer {
     font-size: 0.9rem; } }
 
-.artist {
-  margin-bottom: 50px;
-}
-.artist img {
-  float: left;
-  width: 200px;
-  margin-right: 20px;
-}
-.artist p {
-  font-size: 14px;
-}
-
-@media screen and (min-width: 64em) {
-  .tracks {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .track:nth-child(5n) {
-    margin-right: 0;
-  }
-}
-
-.track {
-  float: left;
-  width: 150px;
-  margin-right: 15px;
-}
-.track img {
-  width: 100%;
-}
-.track p {
-  width: 150px;
-  margin-top: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 14px;
-  text-overflow: ellipsis;
-}
-.track a {
-  text-decoration: none;
-  color: inherit;
-}
-
 .loader {
   clear: both;
 }

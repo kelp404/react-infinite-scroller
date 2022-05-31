@@ -5,8 +5,6 @@ var buffer = require('vinyl-buffer')
 var browserify = require('browserify');
 var babelify = require('babelify');
 
-gulp.task('default', ['js']);
-
 gulp.task('js', function() {
     return browserify('src/index.js').transform(babelify, {presets: ["es2015", "react"]})
       .bundle()
@@ -15,3 +13,5 @@ gulp.task('js', function() {
       .pipe(rename('script.js'))
       .pipe(gulp.dest('./js'));
 });
+
+gulp.task('default', gulp.series('js'));

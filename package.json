@@ -1,6 +1,6 @@
 {
   "name": "@kelp404/react-infinite-scroller",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Infinite scroll component for React in ES6",
   "publishConfig": {
     "access": "public"
@@ -21,7 +21,7 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "node_modules/.bin/eslint ./src ./test --fix --max-warnings 0 --no-ignore",
+      "node_modules/.bin/eslint --fix --max-warnings 0",
       "git add"
     ]
   },
@@ -39,14 +39,14 @@
     "prop-types": "^15.5.8"
   },
   "peerDependencies": {
-    "react": "^0.14.9 || ^15.3.0 || ^16.0.0 || ^17.0.0"
+    "react": "^0.14.9 || ^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
+    "@testing-library/react": "^13.0.1",
     "babel-cli": "^6.6.5",
     "babel-core": "^6.26.3",
     "babel-eslint": "^7.2.3",
     "babel-istanbul": "^0.12.2",
-    "babel-loader": "^7.0.0",
     "babel-plugin-add-module-exports": "^0.1.2",
     "babel-plugin-istanbul": "^4.1.6",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
@@ -54,9 +54,6 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-2": "^6.13.0",
     "chai": "^3.5.0",
-    "chai-enzyme": "^0.6.1",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.10.0",
     "eslint-config-last": "^0.0.3",
     "eslint-config-prettier": "^2.6.0",
@@ -70,10 +67,8 @@
     "mocha": "^3.3.0",
     "nyc": "^15.1.0",
     "prettier": "^1.7.4",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-test-renderer": "^16.0.0",
-    "sinon": "^2.1.0",
-    "webpack": "^2.5.1"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "sinon": "^2.1.0"
   }
 }
